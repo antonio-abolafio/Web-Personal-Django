@@ -4,11 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Acerca de{% endblock %}</title>
+
+    {% load static %}
 </head>
 <body>
+    {% block background %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
+
+    {% block headers %}
+    <h1>Acerca de</h1>
+    <span class="subheading">Biografía</span>
+    {% endblock %}
+
     {% block content %}
-    <h2>Acerca de</h2>
-    <p>Me llamo Antonio y soy Técnico Informático.</p>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+              <img class="img-fluid avatar" src="{% static 'core/img/fotoperfil.png' %}" alt="">
+            </div>
+            <div class="col-lg-7 col-md-8">
+              <h2 class="section-heading">Antonio Abolafio</h2>
+              <p>Nacido en... lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio.</p>
+        </div>
+    </div>
     {% endblock %}
 </body>
 </html>
